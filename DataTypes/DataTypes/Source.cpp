@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+//#define VARIABLES
+//#define CONSTANTS
+//#define ARITHMETIC_OPERATORS
+//#define ASSIGNMENT_OPERATOR
+#define INCREMENT
+
 void main()
 {
 	setlocale(LC_ALL, "Rus");
@@ -48,12 +54,13 @@ void main()
 	cout << DBL_MIN << "..." << DBL_MAX << endl;
 	cout << "\n----------------------\n";*/
 
+#ifdef VARIABLES
 	//ќбъ€вл€ем переменные:
 	float price_of_cucumbers;	//÷ена одного килограмма огурцов
 	float weight_of_cucumbers;	//¬ес огурцов
-	
+
 	//¬вод данных с клавиатуры:
-	cout << "¬ведите цену: "; 
+	cout << "¬ведите цену: ";
 	cin >> price_of_cucumbers;	//¬вод значени€ переменной с клавиатуры
 
 	cout << "¬ведите вес: ";
@@ -64,4 +71,39 @@ void main()
 
 	float total_price = price_of_cucumbers * weight_of_cucumbers;
 	cout << "ќбща€ стоимость огурцов: " << total_price << " грн.\n";
+#endif // VARIABLES
+
+#ifdef CONSTANTS
+	int speed = 0;
+	const int MAX_SPEED = 250;
+	cout << '+' << endl;
+	cout << sizeof('+') << endl;
+	cout << typeid('+').name() << endl;
+	cout << typeid(12352.f).name() << endl;
+#endif // CONSTANTS
+
+#ifdef ARITHMETIC_OPERATORS
+	cout << 13 / 5 << endl;
+	cout << 13 % 5 << endl;
+	cout << 5. % 13 << endl;
+#endif // ARITHMETIC_OPERATORS
+
+#ifdef ASSIGNMENT_OPERATOR
+	int a, b, c;
+	a = b = c = 0;
+	cout << a << endl;
+	cout << b << endl;
+	cout << c << endl;
+#endif // ASSIGNMENT_OPERATOR
+
+	int i = 3;
+	int j = i++;
+	cout << i << endl;
+	cout << j << endl;
+
+	///////////////////////////////////
+
+	int a = 2;
+	a = a + 3;
+	cout << a << endl;
 }
